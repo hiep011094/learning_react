@@ -1,0 +1,47 @@
+@import "./mixin";
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1.6rem;
+    line-height: 2;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: #1d2547;
+    @include res(sp) {
+        font-size: 1.4rem;
+        line-height: 1.8;
+    }
+}
+
+.app {
+    overflow: hidden;
+}
+
+main {
+    margin-top: 90px;
+}
+
+p {
+    letter-spacing: 0.1em;
+    font-weight: 400;
+}
+
+.l-container {
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.pc {
+    @include res(sp) {
+        display: none !important;
+    }
+}
+.sp {
+    display: none !important;
+    @include res(sp) {
+        display: block !important;
+    }
+}
