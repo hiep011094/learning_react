@@ -15,7 +15,7 @@
 
         .content {
             .ttl {
-                font-family: "Cinzel", serif;
+                font-family: $family-title;
                 font-size: 12rem;
                 font-weight: 700;
                 margin-bottom: 14px;
@@ -26,19 +26,18 @@
                 letter-spacing: 0.05em;
                 text-transform: uppercase;
                 text-align: center;
-                @include res(pc-m){
+                @include res(pc-m) {
                     font-size: 7vw;
                 }
-                @include res(sp){
+                @include res(sp) {
                     font-size: 4rem;
                     margin-bottom: 20px;
                 }
             }
-            .c-btn01{
+            .c-btn01 {
                 left: 50%;
                 transform: translateX(-50%);
             }
         }
     }
 }
-

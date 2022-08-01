@@ -4,175 +4,299 @@ import Grid from "../../contents/Gird";
 import Mainvisual from "../../layout/Mainvisual";
 import { images } from "../../../assets/img";
 import "./styles.scss";
-import Category from "../../layout/Category";
+import Category from "../../contents/Category";
 
 const Home = () => {
-    return (
-        <main className="p-top">
-            <Mainvisual />
-            <Category />
-            <div className="p-top1">
-                <div className="l-container">
-                    <h3 className="c-ttl01">new <br />arrival</h3>
-                    <Grid column={4} mr={20}>
-                        <Link to="/" className="c-product">
-                            <span className="icon"><img src={images.common.icon01} alt="Knitted Jumper" /></span>
-                            <figure>
-                                <img src={images.home.img_shop01} alt="Knitted Jumper" />
-                            </figure>
-                            <h4 className="ttl">Knitted Jumper</h4>
-                            <ul className="rate">
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                            </ul>
-                            <p className="price">$ 30.00</p>
-                        </Link>
-                        <Link to="/" className="c-product">
-                            <span className="icon"><img src={images.common.icon01} alt="Knitted Jumper" /></span>
-                            <figure>
-                                <img src={images.home.img_shop02} alt="Knitted Jumper" />
-                            </figure>
-                            <h4 className="ttl">Knitted Jumper</h4>
-                            <ul className="rate">
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                            </ul>
-                            <p className="price">$ 30.00</p>
-                        </Link>
-                        <Link to="/" className="c-product">
-                            <span className="icon"><img src={images.common.icon01} alt="Knitted Jumper" /></span>
-                            <figure>
-                                <img src={images.home.img_shop03} alt="Knitted Jumper" />
-                            </figure>
-                            <h4 className="ttl">Knitted Jumper</h4>
-                            <ul className="rate">
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                            </ul>
-                            <p className="price">$ 30.00</p>
-                        </Link>
-                        <Link to="/" className="c-product">
-                            <span className="icon"><img src={images.common.icon01} alt="Knitted Jumper" /></span>
-                            <figure>
-                                <img src={images.home.img_shop04} alt="Knitted Jumper" />
-                            </figure>
-                            <h4 className="ttl">Knitted Jumper</h4>
-                            <ul className="rate">
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                            </ul>
-                            <p className="price">$ 30.00</p>
-                        </Link>
-                        <Link to="/" className="c-product">
-                            <span className="icon"><img src={images.common.icon01} alt="Knitted Jumper" /></span>
-                            <figure>
-                                <img src={images.home.img_shop05} alt="Knitted Jumper" />
-                            </figure>
-                            <h4 className="ttl">Knitted Jumper</h4>
-                            <ul className="rate">
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                            </ul>
-                            <p className="price">$ 30.00</p>
-                        </Link>
-                        <Link to="/" className="c-product">
-                            <span className="icon"><img src={images.common.icon01} alt="Knitted Jumper" /></span>
-                            <figure>
-                                <img src={images.home.img_shop06} alt="Knitted Jumper" />
-                            </figure>
-                            <h4 className="ttl">Knitted Jumper</h4>
-                            <ul className="rate">
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                            </ul>
-                            <p className="price">$ 30.00</p>
-                        </Link>
-                        <Link to="/" className="c-product">
-                            <span className="icon"><img src={images.common.icon01} alt="Knitted Jumper" /></span>
-                            <figure>
-                                <img src={images.home.img_shop07} alt="Knitted Jumper" />
-                            </figure>
-                            <h4 className="ttl">Knitted Jumper</h4>
-                            <ul className="rate">
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                            </ul>
-                            <p className="price">$ 30.00</p>
-                        </Link>
-                        <Link to="/" className="c-product">
-                            <span className="icon"><img src={images.common.icon01} alt="Knitted Jumper" /></span>
-                            <figure>
-                                <img src={images.home.img_shop08} alt="Knitted Jumper" />
-                            </figure>
-                            <h4 className="ttl">Knitted Jumper</h4>
-                            <ul className="rate">
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li className="active"><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                            </ul>
-                            <p className="price">$ 30.00</p>
-                        </Link>
-                    </Grid>
-                    <Link to="/" className="c-btn02">Browse More</Link>
-                </div>
+  return (
+    <main className="p-top">
+      <Mainvisual />
+      <Category />
+      <div className="p-top1">
+        <div className="l-container">
+          <h3 className="c-ttl01">
+            new <br />
+            arrival
+          </h3>
+          <Grid column={4} mr={20}>
+            <Link to="/" className="c-product">
+              <span className="icon">
+                <img src={images.common.icon01} alt="Knitted Jumper" />
+              </span>
+              <figure>
+                <img src={images.products.img_shop01} alt="Knitted Jumper" />
+              </figure>
+              <h4 className="ttl">Knitted Jumper</h4>
+              <ul className="rate">
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li>
+                  <i className="fas fa-star"></i>
+                </li>
+              </ul>
+              <p className="price">$ 30.00</p>
+            </Link>
+            <Link to="/" className="c-product">
+              <span className="icon">
+                <img src={images.common.icon01} alt="Knitted Jumper" />
+              </span>
+              <figure>
+                <img src={images.products.img_shop02} alt="Knitted Jumper" />
+              </figure>
+              <h4 className="ttl">Knitted Jumper</h4>
+              <ul className="rate">
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li>
+                  <i className="fas fa-star"></i>
+                </li>
+              </ul>
+              <p className="price">$ 30.00</p>
+            </Link>
+            <Link to="/" className="c-product">
+              <span className="icon">
+                <img src={images.common.icon01} alt="Knitted Jumper" />
+              </span>
+              <figure>
+                <img src={images.products.img_shop03} alt="Knitted Jumper" />
+              </figure>
+              <h4 className="ttl">Knitted Jumper</h4>
+              <ul className="rate">
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li>
+                  <i className="fas fa-star"></i>
+                </li>
+              </ul>
+              <p className="price">$ 30.00</p>
+            </Link>
+            <Link to="/" className="c-product">
+              <span className="icon">
+                <img src={images.common.icon01} alt="Knitted Jumper" />
+              </span>
+              <figure>
+                <img src={images.products.img_shop04} alt="Knitted Jumper" />
+              </figure>
+              <h4 className="ttl">Knitted Jumper</h4>
+              <ul className="rate">
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li>
+                  <i className="fas fa-star"></i>
+                </li>
+              </ul>
+              <p className="price">$ 30.00</p>
+            </Link>
+            <Link to="/" className="c-product">
+              <span className="icon">
+                <img src={images.common.icon01} alt="Knitted Jumper" />
+              </span>
+              <figure>
+                <img src={images.products.img_shop05} alt="Knitted Jumper" />
+              </figure>
+              <h4 className="ttl">Knitted Jumper</h4>
+              <ul className="rate">
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li>
+                  <i className="fas fa-star"></i>
+                </li>
+              </ul>
+              <p className="price">$ 30.00</p>
+            </Link>
+            <Link to="/" className="c-product">
+              <span className="icon">
+                <img src={images.common.icon01} alt="Knitted Jumper" />
+              </span>
+              <figure>
+                <img src={images.products.img_shop06} alt="Knitted Jumper" />
+              </figure>
+              <h4 className="ttl">Knitted Jumper</h4>
+              <ul className="rate">
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li>
+                  <i className="fas fa-star"></i>
+                </li>
+              </ul>
+              <p className="price">$ 30.00</p>
+            </Link>
+            <Link to="/" className="c-product">
+              <span className="icon">
+                <img src={images.common.icon01} alt="Knitted Jumper" />
+              </span>
+              <figure>
+                <img src={images.products.img_shop07} alt="Knitted Jumper" />
+              </figure>
+              <h4 className="ttl">Knitted Jumper</h4>
+              <ul className="rate">
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li>
+                  <i className="fas fa-star"></i>
+                </li>
+              </ul>
+              <p className="price">$ 30.00</p>
+            </Link>
+            <Link to="/" className="c-product">
+              <span className="icon">
+                <img src={images.common.icon01} alt="Knitted Jumper" />
+              </span>
+              <figure>
+                <img src={images.products.img_shop08} alt="Knitted Jumper" />
+              </figure>
+              <h4 className="ttl">Knitted Jumper</h4>
+              <ul className="rate">
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li className="active">
+                  <i className="fas fa-star"></i>
+                </li>
+                <li>
+                  <i className="fas fa-star"></i>
+                </li>
+              </ul>
+              <p className="price">$ 30.00</p>
+            </Link>
+          </Grid>
+          <Link to="/" className="c-btn02">
+            Browse More
+          </Link>
+        </div>
+      </div>
+      <div className="p-top2">
+        <figure>
+          <img
+            src={images.home.img_banner01}
+            alt="collection houses our first-ever"
+          />
+        </figure>
+        <div className="p-top2__inner l-container">
+          <h3 className="c-ttl01">
+            collection houses our
+            <br /> first-ever
+          </h3>
+          <Link to="/" className="c-btn01">
+            About Us
+          </Link>
+        </div>
+      </div>
+      <div className="p-top3">
+        <Grid column={2} mr={40} mrPcS={20}>
+          <div className="c-box01">
+            <figure>
+              <img
+                src={images.news.img_news01}
+                alt="Established fact that by the readable content"
+              />
+            </figure>
+            <div className="c-box01__content">
+              <h3 className="ttl">
+                Established fact that by the <br />
+                readable content
+              </h3>
+              <Link to="/" className="c-btn01">
+                Read More
+              </Link>
             </div>
-            <div className="p-top2">
-                <figure>
-                    <img src={images.home.img_banner01} alt="collection houses our first-ever" />
-                </figure>
-                <div className="p-top2__inner l-container">
-                    <h3 className="c-ttl01">collection houses our<br /> first-ever</h3>
-                    <Link to="/" className='c-btn01'>About Us</Link>
-                </div>
+          </div>
+          <div className="c-box01">
+            <figure>
+              <img
+                src={images.news.img_news02}
+                alt="Established fact that by the readable content"
+              />
+            </figure>
+            <div className="c-box01__content">
+              <h3 className="ttl">
+                Established fact that by the <br />
+                readable content
+              </h3>
+              <Link to="/" className="c-btn01">
+                Read More
+              </Link>
             </div>
-            <div className="p-top3">
-                <Grid column={2} mr={40} mrPcS={20}>
-                    <div className="c-box01">
-                        <figure>
-                            <img src={images.home.img_news01} alt="Established fact that by the readable content" />
-                        </figure>
-                        <div className="c-box01__content">
-                            <h3 className="ttl">Established fact that by the <br />readable content</h3>
-                            <Link to="/" className='c-btn01'>Read More</Link>
-                        </div>
-                    </div>
-                    <div className="c-box01">
-                        <figure>
-                            <img src={images.home.img_news02} alt="Established fact that by the readable content" />
-                        </figure>
-                        <div className="c-box01__content">
-                            <h3 className="ttl">Established fact that by the <br />readable content</h3>
-                            <Link to="/" className='c-btn01'>Read More</Link>
-                        </div>
-                    </div>
-                </Grid>
-            </div>
-            
-        </main>
-    );
+          </div>
+        </Grid>
+      </div>
+    </main>
+  );
 };
 
 export default Home;

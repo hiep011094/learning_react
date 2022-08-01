@@ -1,8 +1,7 @@
 @import "./mixin";
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-        "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: $family;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 1.6rem;
@@ -10,7 +9,6 @@ body {
     font-weight: 400;
     letter-spacing: 0.1em;
     color: #1d2547;
-
     @include res(sp) {
         font-size: 1.4rem;
         line-height: 1.8;
@@ -66,8 +64,8 @@ p {
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: 4px;
-    font-family: "Cinzel", serif;
-    color: #140C40;
+    font-family: $family-title;
+    color: #140c40;
     text-align: center;
 
     @include res(pc-s) {
@@ -85,7 +83,7 @@ p {
 
 /*---------------------btn-----------------*/
 .c-btn01 {
-    background: #9F78FF;
+    background: #9f78ff;
     text-transform: capitalize;
     padding: 15px 40px 17px 40px;
     text-align: center;
@@ -104,7 +102,7 @@ p {
     overflow: hidden;
     margin: 0 auto;
     border-radius: 4px;
-    pointer-events: all;    
+    pointer-events: all;
     @include res(tb) {
         font-size: 1.6rem;
         padding: 12px 30px 14px 30px;
@@ -143,12 +141,11 @@ p {
             z-index: -1;
         }
     }
-
 }
 
-.c-btn02{
-    border: 1px solid #9F78FF;
-    color: #9F78FF;
+.c-btn02 {
+    border: 1px solid #9f78ff;
+    color: #9f78ff;
     background: none;
     border-radius: 5px;
     text-transform: capitalize;
@@ -175,7 +172,7 @@ p {
         top: 0;
         width: 101%;
         height: 101%;
-        background: #9F78FF;
+        background: #9f78ff;
         z-index: -1;
         transition: transform 0.5s;
         transition-timing-function: ease;
@@ -184,12 +181,12 @@ p {
         transform: scaleY(0);
         border-radius: 0;
     }
-    &:hover{
+    &:hover {
         color: #fff;
-       &::before{
-        transform: scaleY(1);
-        border: 1px solid transparent;        
-       }
+        &::before {
+            transform: scaleY(1);
+            border: 1px solid transparent;
+        }
     }
 }
 
@@ -200,12 +197,12 @@ p {
     figure {
         overflow: hidden;
         margin-bottom: 20px;
-
+        border-radius: 5px;
         img {
             width: 100%;
         }
     }
-    .icon{
+    .icon {
         display: inline-block;
         border-radius: 100%;
         position: absolute;
@@ -213,7 +210,7 @@ p {
         top: 10px;
         z-index: 1;
     }
-    *{
+    * {
         transition: 0.5s;
     }
     .ttl {
@@ -224,13 +221,13 @@ p {
     .rate {
         display: flex;
         justify-content: center;
-        margin-bottom: 10px;        
+        margin-bottom: 10px;
         li {
             color: #ddd;
-            font-size: 1.4rem;            
-            
+            font-size: 1.4rem;
+
             &.active {
-                color: #FBBA42;
+                color: #fbba42;
             }
         }
     }
@@ -239,56 +236,56 @@ p {
         font-weight: 500;
         text-align: center;
     }
-    &:hover{
+    &:hover {
         opacity: 1;
-        *{
+        * {
             opacity: 0.8;
         }
-        figure{
+        figure {
             opacity: 1;
-            img{
+            img {
                 opacity: 1;
                 transform: scale(1.1);
             }
         }
-
     }
 }
 
 /*---------------------box-----------------*/
-.c-box01{
-    position: relative;    
-    figure{
+.c-box01 {
+    position: relative;
+    figure {
         overflow: hidden;
-        img{
+        img {
             width: 100%;
             transition: 0.5s;
         }
     }
-    &__content{
+    &__content {
         position: absolute;
         bottom: 3vw;
         left: 3vw;
         z-index: 1;
-        .ttl{
+        .ttl {
             font-size: 3rem;
             line-height: 1.2;
             color: #fff;
             margin-bottom: 2vw;
-            @include res(pc-s){
+            font-weight: 500;
+            @include res(pc-s) {
                 font-size: 2.6rem;
             }
-            @include res(tb){
+            @include res(tb) {
                 font-size: 2.2rem;
             }
-            @include res(sp){
+            @include res(sp) {
                 font-size: 2rem;
             }
         }
     }
-    &:hover{
-        figure{
-            img{
+    &:hover {
+        figure {
+            img {
                 transform: scale(1.1);
             }
         }
