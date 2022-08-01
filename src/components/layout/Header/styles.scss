@@ -7,7 +7,8 @@
     left: 0;
     top: 0;
     z-index: 10;
-    @include res(pc) {
+    background: #fff;
+    @include res(pc-s) {
         padding: 20px;
     }
     @include res(tb) {
@@ -168,7 +169,7 @@
     margin-left: 50px;
     position: relative;
     z-index: 1;
-    @include res(pc) {
+    @include res(pc-s) {
         margin-left: 30px;
     }
     @include res(sp) {

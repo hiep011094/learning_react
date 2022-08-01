@@ -42,16 +42,16 @@ const Header = () => {
                   <Link to="/">HOME</Link>
                 </li>
                 <li>
-                  <Link to="/">SHOP</Link>
+                  <Link to="/shop">SHOP</Link>
                 </li>
                 <li>
-                  <Link to="/">ABOUT</Link>
+                  <Link to="/about">ABOUT</Link>
                 </li>
                 <li>
-                  <Link to="/">BLOG</Link>
+                  <Link to="/blog">BLOG</Link>
                 </li>
                 <li>
-                  <Link to="/">CONTACT</Link>
+                  <Link to="/contact">CONTACT</Link>
                 </li>
               </ul>
               <ul className="icon sp">

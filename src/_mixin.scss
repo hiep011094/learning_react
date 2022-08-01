@@ -1,5 +1,11 @@
 $breakpoints: (
-    pc: (
+    pc-l: (
+        max-width: 1920px,
+    ),
+    pc-m: (
+        max-width: 1600px,
+    ),
+    pc-s: (
         max-width: 1200px,
     ),
     tb: (
@@ -7,6 +13,12 @@ $breakpoints: (
     ),
     sp: (
         max-width: 768px,
+    ),
+    sp-425: (
+        max-width: 425px,
+    ),
+    sp-374: (
+        max-width: 374px,
     ),
 ) !default;
 
