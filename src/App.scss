@@ -216,21 +216,7 @@ p {
     .ttl {
         text-align: center;
         margin-bottom: 10px;
-    }
-
-    .rate {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 10px;
-        li {
-            color: #ddd;
-            font-size: 1.4rem;
-
-            &.active {
-                color: #fbba42;
-            }
-        }
-    }
+    }    
 
     .price {
         font-weight: 500;

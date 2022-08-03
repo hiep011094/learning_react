@@ -11,6 +11,7 @@ import img_01 from "./common/img_01.webp";
 import img_02 from "./common/img_02.webp";
 import img_03 from "./common/img_03.webp";
 import img_04 from "./common/img_04.webp";
+import payment from "./common/payment.png";
 
 // sliders
 import img_slider01 from "./sliders/img_slider01.webp";
@@ -26,6 +27,11 @@ import img_shop05 from "./products/img_shop05.png";
 import img_shop06 from "./products/img_shop06.webp";
 import img_shop07 from "./products/img_shop07.webp";
 import img_shop08 from "./products/img_shop08.webp";
+
+import img_detail_product01 from "./products/img_detail_product01.jpg";
+import img_detail_product02 from "./products/img_detail_product02.jpg";
+import img_detail_product03 from "./products/img_detail_product03.jpg";
+import img_detail_product04 from "./products/img_detail_product04.jpg";
 
 // home
 import img_banner01 from "./top/img_banner01.webp";
@@ -52,6 +58,7 @@ export const images = {
     img_02,
     img_03,
     img_04,
+    payment
   },
   sliders: {
     img_slider01,
@@ -70,6 +77,12 @@ export const images = {
     img_shop06,
     img_shop07,
     img_shop08,
+    detail:{
+      img_detail_product01,
+      img_detail_product02,
+      img_detail_product03,
+      img_detail_product04
+    }
   },
   about: {
     img_about01,

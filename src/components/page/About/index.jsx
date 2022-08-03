@@ -5,7 +5,7 @@ import "./styles.scss";
 import Category from "../../contents/Category";
 
 const About = ({ data_page }) => {
-  const data_pages = [data_page, { title: "About", link: "/about" }];
+  const data_pages = [{title:"Home",link: "/"}, { title: "About", link: "/about" }];
   return (
     <main className="p-about">
       <Topic data_pages={data_pages} />

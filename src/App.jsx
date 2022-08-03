@@ -7,6 +7,7 @@ import Login from "./components/page/Login";
 import Footer from "./components/layout/Footer";
 import Shop from "./components/page/Shop";
 import About from "./components/page/About";
+import DetailProduct from "./components/page/Shop/DetailProduct";
 
 function App() {
   return (
@@ -16,11 +17,15 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route
           path="/shop"
-          element={<Shop data_page={{ title: "Home", link: "/" }} />}
+          element={<Shop />}
         />
         <Route
           path="/about"
-          element={<About data_page={{ title: "Home", link: "/" }} />}
+          element={<About />}
+        />
+        <Route
+          path="/shop/:productId"
+          element={<DetailProduct />}
         />
         <Route path="/login" element={<Login />} />
       </Routes>
