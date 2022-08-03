@@ -1,64 +1,100 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from "react";
 import "./styles.scss";
 
-function useOutsideAlerter(ref) {
-    useEffect(() => {
-        /**
-         * Alert if clicked on outside of element
-         */
-        function handleClickOutside(event) {
-            console.log(ref.current)
-            if (ref.current && !ref.current.contains(event.target)) {
-                alert("You clicked outside of me!");
-            }
-        }
-        // Bind the event listener
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            // Unbind the event listener on clean up
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [ref]);
-}
-
 const SelectOptions = ({ data }) => {
+  const [isToggle, setIstoggle] = useState(false);
 
-    const [heightSelect, setHeightSelect] = useState(0)
+  const customSelect = useRef();
 
+  const handelCustomSelect = (e) => {
+    const $this = e.target;
+    if (!isToggle) {
+      $this.nextSibling.style.height = 200 + "px";
+    } else {
+      $this.nextSibling.style.height = 0;
+    }
+    setIstoggle(!isToggle);
+    // console.log(e.target.nextSibling);
+  };
 
-    const handelCustomSelect = (e) => {
-        setHeightSelect(200)
-        const $this = e.target
-        $this.nextSibling.style.height = heightSelect + "px"
-        console.log(e.target.nextSibling)
-    }   
+  const handleClickOtion = (e) => {
+    const $this = e.target;
+    const data = $this.getAttribute("rel");
+    console.log($this.parentNode.previousSibling.previousSibling);
+    $this.parentNode.previousSibling.previousSibling.value = data;
+    // console.log($this.getAttribute("rel"));
+    $this.parentNode.style.height = 0;
+    setIstoggle(false);
+  };
+  //   console.log(customSelect.current.previousSibling.value);
+  useEffect(() => {
+    const clickOutline = (e) => {
+      console.log(customSelect.current.previousSibling.value);
+      //   console.log(customSelect.current.nextSibling.children[0]);
 
-    return (
-        <>
-            <div className="custom-select" onClick={handelCustomSelect}>HTML</div>
-            <ul className="c-select-options" style={{ height: heightSelect + "px" }}>
-                {data && data.map((el, id) => <li key={id} rel={el.toLowerCase()
-                    .replace(/ /g, '-')
-                    .replace(/[^\w-]+/g, '')}>{el}</li>)}
+      //   if (
+      //     e.target !== customSelect.current &&
+      //     e.target !== customSelect.current.nextSibling &&
+      //     e.target !== customSelect.current.nextSibling.childNode
+      //   ) {
+      //     customSelect.current.nextSibling.style.height = 0;
+      //     setIstoggle(false);
+      //   }
+    };
+    document.addEventListener("mousedown", clickOutline);
+    return () => {
+      document.removeEventListener("mousedown", clickOutline);
+    };
+  });
 
-            </ul>
-        </>
-    )
-}
+  return (
+    <>
+      <div
+        ref={customSelect}
+        className="custom-select"
+        onClick={handelCustomSelect}
+      >
+        HTML
+      </div>
+      <ul className="c-select-options">
+        {data &&
+          data.map((el, id) => (
+            <li
+              onClick={handleClickOtion}
+              key={id}
+              rel={el
+                .toLowerCase()
+                .replace(/ /g, "-")
+                .replace(/[^\w-]+/g, "")}
+            >
+              {el}
+            </li>
+          ))}
+      </ul>
+    </>
+  );
+};
 
-const SelectEl = ({ data, name, refOutSize }) => {
-    console.log(refOutSize)
-    useOutsideAlerter(refOutSize.current)
-    return (
-        <div className="c-select">
-            <select name={name}>
-                {data && data.map((el, id) => <option key={id} value={el.toLowerCase()
-                    .replace(/ /g, '-')
-                    .replace(/[^\w-]+/g, '')}>{el}</option>)}
-            </select>
-            <SelectOptions data={data} />
-        </div>
-    )
-}
+const SelectEl = ({ data, name }) => {
+  return (
+    <div className="c-select">
+      <select name={name}>
+        {data &&
+          data.map((el, id) => (
+            <option
+              key={id}
+              value={el
+                .toLowerCase()
+                .replace(/ /g, "-")
+                .replace(/[^\w-]+/g, "")}
+            >
+              {el}
+            </option>
+          ))}
+      </select>
+      <SelectOptions data={data} />
+    </div>
+  );
+};
 
-export default SelectEl
+export default SelectEl;
