@@ -6,12 +6,14 @@ import {
 } from "react-lightgallery";
 import SliderSlick from "react-slick";
 import "slick-carousel/slick/slick.css";
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import Topic from "../../../contents/Topic";
 import { images } from "../../../../assets/img";
 import "./styles.scss";
 import Rate from "../../../layout/Rate";
 import SelectEl from "../../../contents/SelectEl";
+import InputNumber from "../../../contents/InputNumber";
+import Grid from "../../../contents/Gird";
 
 const GROUP2 = [];
 for (const el in images.products.detail) {
@@ -27,6 +29,9 @@ const OpenButtonWithHook = ({ item }) => {
 };
 
 const DetailProduct = () => {
+
+  const [popup, setPopup] = useState(0);
+
   const refOutSize = useRef("");
   const params = useParams();
   const data_pages = [
@@ -73,6 +78,11 @@ const DetailProduct = () => {
     e.target.parentNode.style.backgroundImage = `none`;
   };
 
+  const handlePopup = (item) => {
+    setPopup(item)
+  }
+
+
   return (
     <main className="p-detailProduct" ref={refOutSize}>
       <Topic data_pages={data_pages} />
@@ -111,18 +121,18 @@ const DetailProduct = () => {
             </p>
             <span className="price">$28.00</span>
             <div className="form-item">
-              <SelectEl name="size" data={["S", "M", "L", "XL", "XXL"]} />
+              <SelectEl name="Size" data={["S", "M", "L", "XL", "XXL"]} />
               <SelectEl
-                name="color"
+                name="Color"
                 data={["White", "Green", "Blue", "Dress"]}
               />
             </div>
             <div className="form-item">
-              {/* <input type="text" value={1} name="quality" /> */}
-              <button className="add-cart">Add To Cart</button>
+              <InputNumber name="quality" />
+              <button className="c-btn02"><i className="fa-solid fa-cart-plus"></i> Add To Cart</button>
             </div>
             <div className="content-product__item">
-              <p>
+              <p className="txt">
                 <span>Categories:</span>Mens, Others, Uncategorized, Womens
               </p>
               <ul>
@@ -141,10 +151,10 @@ const DetailProduct = () => {
         </div>
         <div className="p-detailProduct__end">
           <ul className="list-ttl">
-            <li>Description</li>
-            <li>Reviews (1)</li>
+            <li onClick={() => handlePopup(0)} className={popup === 0 ? "active" : ''}>Description</li>
+            <li onClick={() => handlePopup(1)} className={popup === 1 ? "active" : ''}>Reviews (1)</li>
           </ul>
-          <div className="content-popup">
+          <div className={"content-popup" + (popup === 0 ? " active" : '')}>
             <h3>Sed do eiusmod tempor incididunt ut labore</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -168,7 +178,7 @@ const DetailProduct = () => {
               aliquam quaerat voluptatem.
             </p>
           </div>
-          <div className="content-popup">
+          <div className={"content-popup" + (popup === 1 ? " active" : '')}>
             <div className="content-review">
               <div className="list-review">
                 <div className="list-review__item">
@@ -177,7 +187,7 @@ const DetailProduct = () => {
                     <Rate />
                   </span>
                   <div className="infor">
-                    <p className="mame">admin (verified owner)</p>
+                    <p className="name">admin (verified owner)</p>
                     <p className="date">January 31, 2019</p>
                     <p className="content">
                       Congratulations!
@@ -191,7 +201,7 @@ const DetailProduct = () => {
                     <Rate />
                   </span>
                   <div className="infor">
-                    <p className="mame">User 01 (verified owner)</p>
+                    <p className="name">User 01 (verified owner)</p>
                     <p className="date">January 31, 2019</p>
                     <p className="content">
                       Congratulations!
@@ -205,7 +215,7 @@ const DetailProduct = () => {
                     <Rate />
                   </span>
                   <div className="infor">
-                    <p className="mame">User 02 (verified owner)</p>
+                    <p className="name">User 02 (verified owner)</p>
                     <p className="date">January 31, 2019</p>
                     <p className="content">
                       Congratulations!
@@ -231,11 +241,104 @@ const DetailProduct = () => {
                     cols="30"
                     rows="10"
                   ></textarea>
-                  <button className="submit">Submit</button>
+                  <div><button className="c-btn01">Submit</button></div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        <div className="p-detailProduct__related">
+          <h3 class="c-ttl01">Related Products</h3>
+          <Grid column={4} mr={20}>
+            <Link to="/" className="c-product">
+              <span className="icon">
+                <img src={images.common.icon01} alt="Knitted Jumper" />
+              </span>
+              <figure>
+                <img src={images.products.img_shop01} alt="Knitted Jumper" />
+              </figure>
+              <h4 className="ttl">Knitted Jumper</h4>
+              <Rate />
+              <p className="price">$ 30.00</p>
+            </Link>
+            <Link to="/" className="c-product">
+              <span className="icon">
+                <img src={images.common.icon01} alt="Knitted Jumper" />
+              </span>
+              <figure>
+                <img src={images.products.img_shop02} alt="Knitted Jumper" />
+              </figure>
+              <h4 className="ttl">Knitted Jumper</h4>
+              <Rate />
+              <p className="price">$ 30.00</p>
+            </Link>
+            <Link to="/" className="c-product">
+              <span className="icon">
+                <img src={images.common.icon01} alt="Knitted Jumper" />
+              </span>
+              <figure>
+                <img src={images.products.img_shop03} alt="Knitted Jumper" />
+              </figure>
+              <h4 className="ttl">Knitted Jumper</h4>
+              <Rate />
+              <p className="price">$ 30.00</p>
+            </Link>
+            <Link to="/" className="c-product">
+              <span className="icon">
+                <img src={images.common.icon01} alt="Knitted Jumper" />
+              </span>
+              <figure>
+                <img src={images.products.img_shop04} alt="Knitted Jumper" />
+              </figure>
+              <h4 className="ttl">Knitted Jumper</h4>
+              <Rate />
+              <p className="price">$ 30.00</p>
+            </Link>
+            <Link to="/" className="c-product">
+              <span className="icon">
+                <img src={images.common.icon01} alt="Knitted Jumper" />
+              </span>
+              <figure>
+                <img src={images.products.img_shop05} alt="Knitted Jumper" />
+              </figure>
+              <h4 className="ttl">Knitted Jumper</h4>
+              <Rate />
+              <p className="price">$ 30.00</p>
+            </Link>
+            <Link to="/" className="c-product">
+              <span className="icon">
+                <img src={images.common.icon01} alt="Knitted Jumper" />
+              </span>
+              <figure>
+                <img src={images.products.img_shop06} alt="Knitted Jumper" />
+              </figure>
+              <h4 className="ttl">Knitted Jumper</h4>
+              <Rate />
+              <p className="price">$ 30.00</p>
+            </Link>
+            <Link to="/" className="c-product">
+              <span className="icon">
+                <img src={images.common.icon01} alt="Knitted Jumper" />
+              </span>
+              <figure>
+                <img src={images.products.img_shop07} alt="Knitted Jumper" />
+              </figure>
+              <h4 className="ttl">Knitted Jumper</h4>
+              <Rate />
+              <p className="price">$ 30.00</p>
+            </Link>
+            <Link to="/" className="c-product">
+              <span className="icon">
+                <img src={images.common.icon01} alt="Knitted Jumper" />
+              </span>
+              <figure>
+                <img src={images.products.img_shop08} alt="Knitted Jumper" />
+              </figure>
+              <h4 className="ttl">Knitted Jumper</h4>
+              <Rate />
+              <p className="price">$ 30.00</p>
+            </Link>
+          </Grid>
         </div>
       </div>
     </main>

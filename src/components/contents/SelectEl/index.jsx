@@ -1,66 +1,29 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./styles.scss";
 
-const SelectOptions = ({ data }) => {
-  const [isToggle, setIstoggle] = useState(false);
+const SelectOptions = ({ data,name }) => {
 
-  const customSelect = useRef();
+  const handleClickOtion = (e, rel, name) => {    
+    e.target.parentNode.style.height = 0;
+    e.target.parentNode.previousSibling.previousSibling.value = rel;
+    e.target.parentNode.previousSibling.innerHTML = name    
+  }
 
-  const handelCustomSelect = (e) => {
-    const $this = e.target;
-    if (!isToggle) {
-      $this.nextSibling.style.height = 200 + "px";
-    } else {
-      $this.nextSibling.style.height = 0;
-    }
-    setIstoggle(!isToggle);
-    // console.log(e.target.nextSibling);
-  };
 
-  const handleClickOtion = (e) => {
-    const $this = e.target;
-    const data = $this.getAttribute("rel");
-    console.log($this.parentNode.previousSibling.previousSibling);
-    $this.parentNode.previousSibling.previousSibling.value = data;
-    // console.log($this.getAttribute("rel"));
-    $this.parentNode.style.height = 0;
-    setIstoggle(false);
-  };
-  //   console.log(customSelect.current.previousSibling.value);
-  useEffect(() => {
-    const clickOutline = (e) => {
-      console.log(customSelect.current.previousSibling.value);
-      //   console.log(customSelect.current.nextSibling.children[0]);
-
-      //   if (
-      //     e.target !== customSelect.current &&
-      //     e.target !== customSelect.current.nextSibling &&
-      //     e.target !== customSelect.current.nextSibling.childNode
-      //   ) {
-      //     customSelect.current.nextSibling.style.height = 0;
-      //     setIstoggle(false);
-      //   }
-    };
-    document.addEventListener("mousedown", clickOutline);
-    return () => {
-      document.removeEventListener("mousedown", clickOutline);
-    };
-  });
 
   return (
     <>
-      <div
-        ref={customSelect}
-        className="custom-select"
-        onClick={handelCustomSelect}
-      >
-        HTML
+      <div className="custom-select">
+        {name}
       </div>
       <ul className="c-select-options">
         {data &&
           data.map((el, id) => (
             <li
-              onClick={handleClickOtion}
+              onClick={(e) => handleClickOtion(e, el
+                .toLowerCase()
+                .replace(/ /g, "-")
+                .replace(/[^\w-]+/g, ""),el)}
               key={id}
               rel={el
                 .toLowerCase()
@@ -76,9 +39,43 @@ const SelectOptions = ({ data }) => {
 };
 
 const SelectEl = ({ data, name }) => {
+
+  const [isSelect,setIsSelect] = useState(false);
+
+  const refSelect = useRef();
+
+  const handelClickSelect = (e) => {
+    const $this = e.target;
+    let height = 0;
+    if (e.target === refSelect.current.querySelector('.custom-select')) {   
+      if(!isSelect){
+        $this.nextSibling.childNodes.forEach(el =>{
+          height = height + el.offsetHeight;
+        })
+      }      
+      $this.nextSibling.style.height = height + "px";
+    }
+    setIsSelect(!isSelect)
+  }
+
+  useEffect(() => {
+    const oulineClick = (e) => {
+      if (!refSelect.current.contains(e.target)) {
+        refSelect.current.querySelector('.c-select-options').style.height = 0;
+        setIsSelect(false)
+      }
+    }
+    document.addEventListener('mousedown', oulineClick);
+    return () => {
+      document.removeEventListener("mousedown", oulineClick)
+    }
+
+  })
+
+
   return (
-    <div className="c-select">
-      <select name={name}>
+    <div ref={refSelect} className={"c-select"+ (isSelect ? " active":"")} onClick={(e) => handelClickSelect(e)}>
+      <select name={name.toLowerCase()}>
         {data &&
           data.map((el, id) => (
             <option
@@ -92,7 +89,7 @@ const SelectEl = ({ data, name }) => {
             </option>
           ))}
       </select>
-      <SelectOptions data={data} />
+      <SelectOptions data={data} name={name}/>
     </div>
   );
 };

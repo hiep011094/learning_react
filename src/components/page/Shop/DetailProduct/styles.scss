@@ -64,7 +64,7 @@
                 display: flex;
                 align-items: flex-end;
                 padding-bottom: 15px;
-                margin-bottom: 20px;
+                margin-bottom: 30px;
 
                 .c-rate {
                     margin-right: 20px;
@@ -75,7 +75,7 @@
 
             .des {
                 line-height: 1.8;
-                margin-bottom: 20px;
+                margin-bottom: 30px;
             }
 
             .price {
@@ -88,16 +88,217 @@
             }
 
             .form-item {
-                
-                
+                padding: 10px 0;
 
+                .input-number {
+                    margin-right: 20px;
+                }
 
+                .c-btn02 {
+                    i {
+                        font-size: 1.8rem;
+                        display: inline-block;
+                        margin-right: 10px;
+                        position: relative;
+                        top: 2px;
+                    }
+                }
+            }
+
+            &__item {
+                border-top: 1px solid #dfdfdf;
+                padding: 20px 0;
+                margin-top: 30px;
+
+                &:last-child {
+                    margin-top: 0;
+                }
+
+                .txt {
+                    font-size: 1.4rem;
+                    color: #999;
+                    margin-bottom: 15px;
+
+                    span {
+                        color: #1d2547;
+                        display: inline-block;
+                        margin-right: 10px;
+                    }
+                }
+
+                ul {
+                    padding-left: 20px;
+
+                    li {
+                        padding-left: 12px;
+                        position: relative;
+                        line-height: 1.5;
+                        margin-bottom: 10px;
+                        font-size: 1.4rem;
+
+                        &::after {
+                            content: "";
+                            width: 4px;
+                            height: 4px;
+                            background: #1d2547;
+                            border-radius: 100%;
+                            position: absolute;
+                            left: 0;
+                            top: 9px;
+                        }
+                    }
+                }
+
+                .ttl-1 {
+                    font-size: 1.4rem;
+                    margin-bottom: 20px;
+                }
             }
 
         }
     }
 
-    &__end {}
+    &__end {
+        padding: 100px 0;
+
+        .list-ttl {
+            display: flex;
+            border-bottom: 1px solid #dfdfdf;
+
+            li {
+                font-size: 2.2rem;
+                padding: 8px 30px;
+                border-radius: 5px 5px 0 0;
+                background: #dee3fa;
+                cursor: pointer;
+                transition: 0.5s;
+
+                &.active {
+                    background: #1d2547;
+                    color: #fff;
+                    cursor: default;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+
+        .content-popup {
+            padding: 50px 30px;
+            display: none;            
+            h1,h2,h3,h4,h5,h6{
+                margin-bottom: 20px;
+            }
+            p{
+                letter-spacing: 0.01em;
+                margin-bottom: 15px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+            &.active {
+                display: block;
+            }
+        }
+
+        .list-review {
+            &__item {
+                display: flex;
+                border-bottom: 1px solid #dfdfdf;
+                padding: 30px;
+                width: 100%;
+                &:last-child{
+                    border: none;
+                }
+                .avatar {
+                    display: block;
+                    width: 40px;
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 100%;
+                        display: block;
+                        margin: 0 auto 5px auto;
+                    }
+                    .c-rate {
+                        li{
+                            font-size: 1rem;
+                        }
+                    }
+                }
+                .infor{
+                    padding-left: 30px;
+                    width: calc(100% - 40px);
+                    p{
+                        font-size: 1.4rem;
+                        letter-spacing: 0.05em;
+                        line-height: 1.6;
+                    }
+                    .date{
+                        font-size: 1rem;
+                        letter-spacing: 0.1em;
+                        margin-bottom: 20px;
+                        position: relative;
+                        &::after{
+                            content: "";
+                            background: #dfdfdf;
+                            width: 40px;
+                            height: 1px;
+                            position: absolute;
+                            left: 0;
+                            bottom: -10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .comment-review{
+            padding: 50px 0;
+            p{
+                letter-spacing: 0.05em;
+            }
+            .rate{
+                padding: 20px 0 10px 0;
+                p{
+
+                }
+                .c-rate{
+                    justify-content: flex-start;
+                    li{
+                        font-size: 1.2rem;
+                    }
+                }                
+            }
+            .comment{
+                label{
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 15px;
+                }
+                textarea{
+                    border: 1px solid #ebebeb;
+                    width: 100%;
+                    max-width: 700px;
+                    height: 250px;
+                    border-radius: 5px;
+                    margin-bottom: 15px;
+                }
+                
+            }
+        }
+    }
+    &__related{
+        .c-ttl01{
+            margin-bottom: 50px;
+        }
+    }
 }
 
 .c-gallery {
