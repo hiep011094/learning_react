@@ -1,3 +1,5 @@
+@import "../../../../mixin";
+
 .react_lightgallery_item {
     position: relative;
     cursor: zoom-in;
@@ -18,16 +20,29 @@
 .p-detailProduct {
     &__inner {
         padding: 100px 20px;
+
+        @include res(sp) {
+            padding: 60px 20px;
+        }
     }
 
     &__content {
         display: flex;
         align-items: flex-start;
 
+        @include res(sp) {
+            display: block;
+        }
+
         .img-product {
             width: 50%;
             overflow: hidden;
             position: relative;
+
+            @include res(sp) {
+                width: 100%;
+                margin-bottom: 50px;
+            }
 
             .slick-list {
                 margin-bottom: 20px;
@@ -54,9 +69,18 @@
             width: 50%;
             padding: 0 0 0 50px;
 
+            @include res(sp) {
+                width: 100%;
+                padding: 0;
+            }
+
             .ttl {
                 font-size: 3.2rem;
                 line-height: 1.3;
+
+                @include res(sp) {
+                    font-size: 2.6rem;
+                }
             }
 
             .rate {
@@ -66,16 +90,29 @@
                 padding-bottom: 15px;
                 margin-bottom: 30px;
 
+                @include res(sp) {
+                    padding-bottom: 10px;
+                    margin-bottom: 20px;
+                }
+
                 .c-rate {
                     margin-right: 20px;
                     justify-content: flex-start;
                     margin-bottom: 0;
+
+                    @include res(sp) {
+                        margin-right: 10px;
+                    }
                 }
             }
 
             .des {
                 line-height: 1.8;
                 margin-bottom: 30px;
+
+                @include res(sp) {
+                    margin-bottom: 20px;
+                }
             }
 
             .price {
@@ -85,22 +122,41 @@
                 margin-bottom: 20px;
                 display: block;
                 font-weight: 500;
+
+                @include res(sp) {
+                    font-size: 2.8rem;
+                }
             }
 
             .form-item {
                 padding: 10px 0;
 
+                @include res(sp) {
+                    padding: 5px 0;
+                }
+
                 .input-number {
                     margin-right: 20px;
+                    z-index: 1;
+                    @include res(sp) {
+                        margin-bottom: 6px;
+                    }
                 }
 
                 .c-btn02 {
+                    @include res(sp) {
+                        margin-top: 15px;
+                    }
                     i {
                         font-size: 1.8rem;
                         display: inline-block;
                         margin-right: 10px;
                         position: relative;
                         top: 2px;
+
+                        @include res(sp) {
+                            font-size: 1.6rem;
+                        }
                     }
                 }
             }
@@ -110,6 +166,10 @@
                 padding: 20px 0;
                 margin-top: 30px;
 
+                @include res(sp) {
+                    margin-top: 20px;
+                }
+
                 &:last-child {
                     margin-top: 0;
                 }
@@ -118,6 +178,11 @@
                     font-size: 1.4rem;
                     color: #999;
                     margin-bottom: 15px;
+
+                    @include res(sp) {
+                        font-size: 1.2rem;
+                        margin-bottom: 15px;
+                    }
 
                     span {
                         color: #1d2547;
@@ -129,12 +194,20 @@
                 ul {
                     padding-left: 20px;
 
+                    @include res(sp) {
+                        padding-left: 10px;
+                    }
+
                     li {
                         padding-left: 12px;
                         position: relative;
                         line-height: 1.5;
                         margin-bottom: 10px;
                         font-size: 1.4rem;
+
+                        @include res(sp) {
+                            font-size: 1.2rem;
+                        }
 
                         &::after {
                             content: "";
@@ -161,6 +234,10 @@
     &__end {
         padding: 100px 0;
 
+        @include res(sp) {
+            padding: 40px 0;
+        }
+
         .list-ttl {
             display: flex;
             border-bottom: 1px solid #dfdfdf;
@@ -172,6 +249,12 @@
                 background: #dee3fa;
                 cursor: pointer;
                 transition: 0.5s;
+
+                @include res(sp) {
+                    font-size: 1.6rem;
+                    padding: 5px 20px;
+                    letter-spacing: 0.05em;
+                }
 
                 &.active {
                     background: #1d2547;
@@ -191,17 +274,29 @@
 
         .content-popup {
             padding: 50px 30px;
-            display: none;            
-            h1,h2,h3,h4,h5,h6{
-                margin-bottom: 20px;
+            display: none;
+            @include res(sp) {
+                padding: 30px 10px;
             }
-            p{
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                margin-bottom: 20px;
+                line-height: 1.2;
+            }
+
+            p {
                 letter-spacing: 0.01em;
                 margin-bottom: 15px;
-                &:last-child{
+
+                &:last-child {
                     margin-bottom: 0;
                 }
             }
+
             &.active {
                 display: block;
             }
@@ -213,39 +308,66 @@
                 border-bottom: 1px solid #dfdfdf;
                 padding: 30px;
                 width: 100%;
-                &:last-child{
+                @include res(sp) {
+                    padding: 20px 10px;
+                }
+                &:last-child {
                     border: none;
                 }
+
                 .avatar {
                     display: block;
                     width: 40px;
+                    @include res(sp) {
+                        width: 35px;
+                    }
                     img {
                         width: 40px;
                         height: 40px;
                         border-radius: 100%;
                         display: block;
                         margin: 0 auto 5px auto;
+                        @include res(sp) {
+                            width: 35px;
+                            height: 35px;
+                        }
                     }
+
                     .c-rate {
-                        li{
+                        li {
                             font-size: 1rem;
+                            @include res(sp) {
+                                font-size: 0.8rem;
+                            }
                         }
                     }
                 }
-                .infor{
+
+                .infor {
                     padding-left: 30px;
                     width: calc(100% - 40px);
-                    p{
+                    @include res(sp) {
+                        padding-left: 20px;
+                    }
+                    p {
                         font-size: 1.4rem;
                         letter-spacing: 0.05em;
                         line-height: 1.6;
+                        margin-bottom: 0;
+                        @include res(sp) {
+                            font-size: 1.2rem;
+                        }
                     }
-                    .date{
+
+                    .date {
                         font-size: 1rem;
                         letter-spacing: 0.1em;
                         margin-bottom: 20px;
                         position: relative;
-                        &::after{
+                        @include res(sp) {
+                            font-size: 0.9rem;
+                        }
+                        &::after {
                             content: "";
                             background: #dfdfdf;
                             width: 40px;
@@ -259,30 +381,40 @@
             }
         }
 
-        .comment-review{
+        .comment-review {
             padding: 50px 0;
-            p{
+            @include res(sp) {
+                padding: 40px 0;
+            }
+            p {
                 letter-spacing: 0.05em;
             }
-            .rate{
-                padding: 20px 0 10px 0;
-                p{
 
+            .rate {
+                padding: 20px 0 10px 0;
+                @include res(sp) {
+                    padding: 10px 0 5px 0;
                 }
-                .c-rate{
+                .c-rate {
                     justify-content: flex-start;
-                    li{
+
+                    li {
                         font-size: 1.2rem;
+                        @include res(sp) {
+                            font-size: 1rem;
+                        }
                     }
-                }                
+                }
             }
-            .comment{
-                label{
+
+            .comment {
+                label {
                     display: block;
                     width: 100%;
                     margin-bottom: 15px;
                 }
-                textarea{
+
+                textarea {
                     border: 1px solid #ebebeb;
                     width: 100%;
                     max-width: 700px;
@@ -290,12 +422,13 @@
                     border-radius: 5px;
                     margin-bottom: 15px;
                 }
-                
+
             }
         }
     }
-    &__related{
-        .c-ttl01{
+
+    &__related {
+        .c-ttl01 {
             margin-bottom: 50px;
         }
     }
@@ -308,4 +441,7 @@
     top: 20px;
     right: 30px;
     cursor: pointer;
+    @include res(sp) {
+        font-size: 2.4rem;
+    }
 }

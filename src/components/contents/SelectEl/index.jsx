@@ -5,6 +5,7 @@ const SelectOptions = ({ data,name }) => {
 
   const handleClickOtion = (e, rel, name) => {    
     e.target.parentNode.style.height = 0;
+    e.target.parentNode.style.pointerEvents = "none";
     e.target.parentNode.previousSibling.previousSibling.value = rel;
     e.target.parentNode.previousSibling.innerHTML = name    
   }
@@ -47,21 +48,27 @@ const SelectEl = ({ data, name }) => {
   const handelClickSelect = (e) => {
     const $this = e.target;
     let height = 0;
-    if (e.target === refSelect.current.querySelector('.custom-select')) {   
+    console.log(e.target);
+    if (e.target === refSelect.current.querySelector('.custom-select')) {        
       if(!isSelect){
         $this.nextSibling.childNodes.forEach(el =>{
           height = height + el.offsetHeight;
         })
       }      
       $this.nextSibling.style.height = height + "px";
+      
+      $this.nextSibling.style.pointerEvents = "all";
+      
     }
     setIsSelect(!isSelect)
   }
 
   useEffect(() => {
     const oulineClick = (e) => {
+      
       if (!refSelect.current.contains(e.target)) {
         refSelect.current.querySelector('.c-select-options').style.height = 0;
+        refSelect.current.querySelector('.c-select-options').style.pointerEvents = "none";
         setIsSelect(false)
       }
     }

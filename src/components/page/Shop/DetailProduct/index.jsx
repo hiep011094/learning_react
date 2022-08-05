@@ -248,7 +248,7 @@ const DetailProduct = () => {
           </div>
         </div>
         <div className="p-detailProduct__related">
-          <h3 class="c-ttl01">Related Products</h3>
+          <h3 className="c-ttl01">Related Products</h3>
           <Grid column={4} mr={20}>
             <Link to="/" className="c-product">
               <span className="icon">

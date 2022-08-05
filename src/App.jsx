@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
@@ -10,26 +10,40 @@ import About from "./components/page/About";
 import DetailProduct from "./components/page/Shop/DetailProduct";
 
 function App() {
+  const [isLogin, setIsLogin] = useState(true);
+  const handleIsLogin = () => {
+    setIsLogin(false)
+  }
   return (
     <div className="app">
-      <Header />
+      {
+        isLogin && (
+          <>
+            <Header handleIsLogin={handleIsLogin} />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route
+                path="/shop"
+                element={<Shop />}
+              />
+              <Route
+                path="/about"
+                element={<About />}
+              />
+              <Route
+                path="/shop/:productId"
+                element={<DetailProduct />}
+              />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+            <Footer />
+          </>
+        )
+      }
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/shop"
-          element={<Shop />}
-        />
-        <Route
-          path="/about"
-          element={<About />}
-        />
-        <Route
-          path="/shop/:productId"
-          element={<DetailProduct />}
-        />
         <Route path="/login" element={<Login />} />
       </Routes>
-      <Footer />
+
     </div>
   );
 }

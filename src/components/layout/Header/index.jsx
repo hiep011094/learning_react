@@ -4,7 +4,7 @@ import { images } from "../../../assets/img";
 import { Link } from "react-router-dom";
 import Search from "../../search";
 
-const Header = () => {
+const Header = ({handleIsLogin}) => {
   const refPopup = useRef();
   const [popup, setPopup] = useState(false);
   const [isToggle, setIsToggle] = useState(false);
@@ -104,12 +104,12 @@ const Header = () => {
             </span>
             <ul className={popup ? "active" : ""}>
               <li>
-                <Link to="/">
+                <Link to="/auth" onClick={handleIsLogin}>
                   Login<i className="fa-solid fa-lock"></i>
                 </Link>
               </li>
               <li>
-                <Link to="/">
+                <Link to="/auth" onClick={handleIsLogin}>
                   Register<i className="fa-solid fa-user"></i>
                 </Link>
               </li>
